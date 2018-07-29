@@ -6,17 +6,17 @@ import java.util.List;
 public class Cart {
 	
 	private int id;
-	private List<String> itemList ;
+	private List<Offer> itemList ;
 	private String status;
 	private int paymentId;
-	public List<String> getItemList() {
+	public List<Offer> getItemList() {
 		if(null==itemList)
 		{
-			itemList=new ArrayList<String>();
+			itemList=new ArrayList<Offer>();
 		}
 		return itemList;
 	}
-	public void setItemList(List<String> itemList) {
+	public void setItemList(List<Offer> itemList) {
 		this.itemList = itemList;
 	}
 	public String getStatus() {
