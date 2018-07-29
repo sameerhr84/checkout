@@ -32,8 +32,8 @@ public class CheckoutController {
 		
 		CheckoutApplication.carts.put(cart.getId(), cart);
 		
-		//return new ResponseEntity<Cart>(cart, HttpStatus.OK);
-		return contentClient.offer(id);
+		return new ResponseEntity<Cart>(cart, HttpStatus.OK);
+		//return contentClient.offer(id);
     }
 	
 	@RequestMapping("/placeorder")
