@@ -9,6 +9,10 @@ public class Cart {
 	private List<Offer> itemList ;
 	private String status;
 	private int paymentId;
+	private Inventory inventory;
+	private Payment payment;
+	
+	
 	public List<Offer> getItemList() {
 		if(null==itemList)
 		{
@@ -36,5 +40,11 @@ public class Cart {
 	}
 	public void setPaymentId(int paymentId) {
 		this.paymentId = paymentId;
+	}
+	public Inventory getInventory() {
+		return inventory;
+	}
+	public void setInventory(Inventory inventory) {
+		this.inventory = inventory;
 	}
 }
