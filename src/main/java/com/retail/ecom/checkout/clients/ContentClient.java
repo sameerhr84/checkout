@@ -10,7 +10,7 @@ import com.retail.ecom.checkout.pojo.Offer;
 @FeignClient(name="content")
 public interface ContentClient {
 	
-    @RequestMapping(method = RequestMethod.GET, value = "/content/offer?id=1", produces = "application/json")
+    @RequestMapping(method = RequestMethod.GET, value = "/content/offer", produces = "application/json")
     public  Offer  offer(@RequestParam(value="id") String id);
 
 }
