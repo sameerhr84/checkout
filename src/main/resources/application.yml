@@ -18,6 +18,9 @@ logging:
   file: checkout.log
   level: INFO
   path: "C:/sameer/spring_cloud_git"
+ribbon: 
+  ConnectTimeout: 30000
+  ReadTimeout: 60000
 server: 
   port: 8082
 spring: 
