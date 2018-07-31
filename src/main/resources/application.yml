@@ -16,8 +16,7 @@ hystrix:
             timeoutInMilliseconds: 40000000
 logging: 
   file: checkout.log
-  level: INFO
-  path: "C:/sameer/spring_cloud_git"
+  level: FINEST
 ribbon: 
   ConnectTimeout: 30000
   ReadTimeout: 60000
