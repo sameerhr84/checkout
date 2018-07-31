@@ -47,4 +47,10 @@ public class Cart {
 	public void setInventory(Inventory inventory) {
 		this.inventory = inventory;
 	}
+	public Payment getPayment() {
+		return payment;
+	}
+	public void setPayment(Payment payment) {
+		this.payment = payment;
+	}
 }

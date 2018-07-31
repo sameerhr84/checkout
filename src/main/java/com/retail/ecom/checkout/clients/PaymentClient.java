@@ -11,9 +11,9 @@ import com.retail.ecom.checkout.pojo.Payment;
 @FeignClient(name="payment")
 public interface PaymentClient {
 
-    @RequestMapping(method = RequestMethod.POST, value = "/payment/createpayment", produces = "application/json")
+    @RequestMapping(method = RequestMethod.POST, value = "/payment/createpayment",consumes  = "application/json", produces = "application/json")
 	public  Payment  createpayment(@RequestBody Payment payment);
     
     @RequestMapping(method = RequestMethod.GET, value = "/payment/authorizepayment", produces = "application/json")
-    public  Payment  authorizepayment(@RequestParam(value="id") String id);
+    public  Payment  authorizepayment(@RequestParam(value="id") Integer id);
 }
