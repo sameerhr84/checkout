@@ -61,7 +61,7 @@ public class CheckoutController {
 		
 		payment=paymentClient.createpayment(payment);
 		
-		paymentClient.authorizepayment(payment.getId());
+		payment=paymentClient.authorizepayment(payment.getId());
 		
 		cart.setPayment(payment);
 		
