@@ -11,6 +11,7 @@ public class Cart {
 	private int paymentId;
 	private Inventory inventory;
 	private Payment payment;
+	private String hostName;
 	
 	
 	public List<Offer> getItemList() {
@@ -52,5 +53,11 @@ public class Cart {
 	}
 	public void setPayment(Payment payment) {
 		this.payment = payment;
+	}
+	public String getHostName() {
+		return hostName;
+	}
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
 	}
 }

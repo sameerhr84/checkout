@@ -1,6 +1,7 @@
 package com.retail.ecom.checkout.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +29,9 @@ public class CheckoutController {
 	@Autowired
 	private PaymentClient paymentClient;
 	
+	@Autowired
+	Environment environment;
+	
 	
 	@RequestMapping("/addtocart")
     public  Cart  offer(@RequestParam(value="id") String id) {
@@ -41,6 +45,9 @@ public class CheckoutController {
 		cart.getItemList().add(offer);
 		cart.setStatus("Pending");
 		cart.setInventory(inventory);
+		
+		String port = environment.getProperty("local.server.port");
+		cart.setHostName(CheckoutApplication.hostName+":"+port);
 		
 		CheckoutApplication.carts.put(cart.getId(), cart);
 		
@@ -66,6 +73,9 @@ public class CheckoutController {
 		cart.setPayment(payment);
 		
 		cart.setStatus("Placed");
+		
+		String port = environment.getProperty("local.server.port");
+		cart.setHostName(CheckoutApplication.hostName+":"+port);
 		
 		return cart;
     }

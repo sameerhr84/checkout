@@ -1,5 +1,6 @@
 package com.retail.ecom.checkout.bootstrap;
 
+import java.net.InetAddress;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,8 +18,19 @@ public class CheckoutApplication {
 	
 	public static int cartId=1;
 	public static Map<Integer,Cart> carts=new HashMap<Integer,Cart>();
+	
+	public static  String hostName;
+	
 	public static void main(String[] args) {
         SpringApplication.run(CheckoutApplication.class, args);
+        
+        try {
+			hostName = InetAddress.getLocalHost().getHostName();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
 }

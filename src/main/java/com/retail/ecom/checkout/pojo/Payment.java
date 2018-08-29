@@ -9,6 +9,8 @@ public class Payment {
 	private int id;
 	private String authId;
 	private float authAmount;
+	private String hostName;
+	
 	public String getCardNumber() {
 		return cardNumber;
 	}
@@ -50,6 +52,12 @@ public class Payment {
 	}
 	public void setAuthAmount(float authAmount) {
 		this.authAmount = authAmount;
+	}
+	public String getHostName() {
+		return hostName;
+	}
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
 	}
 
 }
